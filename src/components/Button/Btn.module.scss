@@ -12,9 +12,14 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
+    opacity: 0.8;
+    cursor: pointer;
     .iconButton{
         width: 18px;
         height: 22px;
         
     }
+}
+.button:hover{
+    opacity: 1.6;
 }

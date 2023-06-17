@@ -1,5 +1,9 @@
 .containerCard{
-    width: 283.36px;
-    height: 442px;
+    width: 273px;
+    height: 402px;
     cursor: pointer;
+    transition: all 0.5s ease;
+}
+.containerCard:hover{
+    transform: scale(1.1);
 }

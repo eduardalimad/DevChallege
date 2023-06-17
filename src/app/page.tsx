@@ -100,25 +100,28 @@ export default function Home() {
   }
 
   function screenMoviesSelectedComponent() {
-    return (<div className='screenSelectedMovies'>
-      {moviesSelected && <a onClick={() => setScreenMovies(true)} >
-        {moviesSelected.title}
-        {}
+    return (
+    <div className='screenSelectedMovies'>
+      <button className={style.backButtonClass} onClick={() => setScreenMovies(true)} ></button>  
+      {
       
+      moviesSelected && <div>
+        {}
         <div className={style.moviesSelected}>
           <picture>
             <img src={moviesSelected.banner} alt="Banner do Filme" className={style.imgBanner} />
           </picture>
-          
+
+          <picture >
+            <img src={moviesSelected.logo} alt="Banner do Filme" className={style.imgLogo}/>
+          </picture>
           <div className={style.movieSinopse}>
             <div className={style.duration}>
-                <h4>Duração</h4>
+                <span className={style.durationTitle}>Duração</span>
                 <picture className={style.classification}>
                 <img src="/classificacaoIdade.svg" alt="Cover do Filme" />
               </picture>
-                <p>{moviesSelected.durationInMinutes}</p>
-                
-
+                <span className={style.duration}>{moviesSelected.durationInMinutes}</span>
             </div>
             <Button/>
             <p className={style.description}>
@@ -128,7 +131,7 @@ export default function Home() {
           
         </div>
 
-        <div className={style.otherMovies}>
+        <div className={style.main} style={{top: '0'}}>
           <h1 className={style.title}>Outros Filmes legais</h1>
           {
             movies && movies.map((element: MoviesProps) => {
@@ -142,7 +145,10 @@ export default function Home() {
             })
           }
         </div>
-      </a>}
+
+      </div>
+      
+      }
 
       
     </div>)
