@@ -1,0 +1,28 @@
+.header {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    height: 5rem;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.73) 0%, rgba(0, 0, 0, 0) 100%);    grid-template-columns: repeat(3, 1fr);
+    z-index: 1000;
+    font-size: 22px;
+    position: absolute;
+    .logoStream{
+        width: 100%;
+        margin-left: 60px;
+    }
+    .menu {
+        display: flex;
+        gap: 3rem;
+        list-style: none;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .containerRight {
+        display: flex;
+        align-items: center;
+        gap: 1.8rem;
+    }
+}

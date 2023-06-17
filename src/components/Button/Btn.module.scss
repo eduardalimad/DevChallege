@@ -1,0 +1,20 @@
+.button{
+    width: 129px;
+    height: 48px;    
+    background: linear-gradient(211.43deg, #8000FF 1.97%, #EB00FF 98.03%);
+    border-radius: 8px;
+    border: none;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    .iconButton{
+        width: 18px;
+        height: 22px;
+        
+    }
+}

@@ -1,0 +1,72 @@
+.carrosel {
+  height: 768px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-image: url(../../public/FundoMovies.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+
+  .img {
+    width: 100%;
+    background: linear-gradient(45.21deg, #000000 21%, rgba(0, 0, 0, 0) 120.67%);
+    height: 100%;
+    display: flex;
+  }
+
+  .cardImg {
+    padding: 10rem 0rem 6rem 2.5rem;
+    width: 50%;
+    position: absolute;
+
+  }
+
+  .cardDescription {
+    font-family: "Nunito Sans", sans-serif;
+    width: 500px;
+    font-weight: 400;
+    font-size: 17px;
+    position: relative;
+    line-height: 201%;
+    letter-spacing: 0.30px;
+    color: rgba(255, 255, 255, 0.7);
+
+
+
+  }
+
+  img {
+    width: 213px;
+    height: 85px;
+    object-fit: cover;
+
+  }
+}
+
+.main {
+  padding: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  top: -13rem;
+  position: relative;
+
+  .title {
+    margin-left: 39px;
+    width: 100%;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 133.4%;
+
+
+  }
+
+}
+.moviesSelected{
+  width: 100%;
+}
