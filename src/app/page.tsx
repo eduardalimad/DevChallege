@@ -104,14 +104,47 @@ export default function Home() {
       {moviesSelected && <a onClick={() => setScreenMovies(true)} >
         {moviesSelected.title}
         {}
-        {/* <NavBar/> */}
-        <div className={style.moviesSelected}>
       
+        <div className={style.moviesSelected}>
           <picture>
-            <img src={moviesSelected.banner} alt="Banner do Filme" className={style.containerCard} />
+            <img src={moviesSelected.banner} alt="Banner do Filme" className={style.imgBanner} />
           </picture>
+          
+          <div className={style.movieSinopse}>
+            <div className={style.duration}>
+                <h4>Duração</h4>
+                <picture className={style.classification}>
+                <img src="/classificacaoIdade.svg" alt="Cover do Filme" />
+              </picture>
+                <p>{moviesSelected.durationInMinutes}</p>
+                
+
+            </div>
+            <Button/>
+            <p className={style.description}>
+              {moviesSelected.description}</p>
+          
+        </div>
+          
+        </div>
+
+        <div className={style.otherMovies}>
+          <h1 className={style.title}>Outros Filmes legais</h1>
+          {
+            movies && movies.map((element: MoviesProps) => {
+              return (
+                <>
+                  <a onClick={() => getMovieById(element.id)} >
+                    <Card parentToChild={element.cover} />
+                  </a>
+                </>
+              );
+            })
+          }
         </div>
       </a>}
+
+      
     </div>)
   }
 
