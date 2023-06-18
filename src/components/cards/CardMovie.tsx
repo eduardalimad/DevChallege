@@ -6,7 +6,7 @@ interface Props {
 
 const Card: React.FC<Props> = ({ parentToChild }) => {
   return (
-    <picture>
+    <picture className={style.container}>
       <img src={parentToChild} alt="Cover do Filme" className={style.containerCard} />
     </picture>
   );

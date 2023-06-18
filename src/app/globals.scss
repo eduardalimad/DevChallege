@@ -1,5 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,500;1,600&display=swap');
 
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+//responsive font
+html {
+  @media(max-width: 1080px) {
+    font-size: 93.75%;
+    //16*0,9373= 15px
+  }
+
+  @media(max-width: 768px) {
+    font-size: 87.5%;
+    //16*0,875 = 14px
+
+    
+  }
+  
+}
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -17,7 +39,4 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: #000000;
-  margin:0;
-  padding: 0;
-
 }

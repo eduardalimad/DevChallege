@@ -1,21 +1,23 @@
+@import url('https://unpkg.com/css.gg@2.0.0/icons/css/menu.css');
 .header {
     display: grid;
     justify-items: center;
     align-items: center;
     height: 5rem;
     width: 100%;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.73) 0%, rgba(0, 0, 0, 0) 100%);    grid-template-columns: repeat(3, 1fr);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.73) 33%, rgba(0, 0, 0, 0) 100%);
+    grid-template-columns: repeat(3, 1fr);
     z-index: 1000;
     font-size: 22px;
-    position: absolute;
+    position: fixed;
     .logoStream{
         width: 100%;
         margin-left: 60px;
     }
-    .menu {
+    .menu, ul, li {
         display: flex;
         gap: 3rem;
-        list-style: none;
+        text-decoration: none;
         font-weight: 400;
         font-size: 16px;
         line-height: 24px;
@@ -25,4 +27,49 @@
         align-items: center;
         gap: 1.8rem;
     }
+    .btnMobile,.menuMobile{
+        display: none;
+    }
 }
+    @media(max-width: 680px) {
+    .btnMobile{
+        display: block!important;
+        position: absolute!important;
+        left: 0;
+        z-index: 5;
+        margin: 1rem;
+        background-color: transparent !important;
+        border: none;
+    }
+    .logoStream {
+        margin-left: 58px !important;
+    }
+    .header {
+        display: flex;
+
+    .containerRight{
+        margin-right: 1rem;
+        }
+    }
+    
+    .menu{
+        display: none!important;
+    }
+    .menuMobile{
+        padding: 4rem;
+        gap: .5rem;
+        display: block !important;
+        background-color: rgba(26, 26, 26, 0.598);
+        position: absolute;
+        height: 100vh;
+        left: 0;
+        width: 14rem;
+        top: 0;
+    }
+
+    
+    
+      
+  }
+
+ 

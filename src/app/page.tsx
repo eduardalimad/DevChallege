@@ -24,25 +24,19 @@ export default function Home() {
   const [moviesSelected, setMoviesSelected] = useState<MoviesProps>();
   const [screenMovies, setScreenMovies] = useState(true);
 
-  const getPosts = async () => {
+  const getMovies = async () => {
     try {
       await app.get('/movies').then((response => {
         setMovies(response.data);
       }));
-
-
-
-
     }
     catch (error) {
       console.log(error);
 
     }
-
-
   }
   useEffect(() => {
-    getPosts()
+    getMovies()
 
   }, []);
 
@@ -100,6 +94,15 @@ export default function Home() {
   }
 
   function screenMoviesSelectedComponent() {
+    const converter = (minutos: number): string => {
+      const horas: number = Math.floor(minutos / 60);
+      const min: number = minutos % 60;
+      const textoHoras: string = (`00${horas}`).slice(-2);
+      const textoMinutos: string = (`00${min}`).slice(-2);
+    
+      return `${textoHoras}h${textoMinutos}m`;
+    };
+
     return (
     <div className='screenSelectedMovies'>
       <button className={style.backButtonClass} onClick={() => setScreenMovies(true)} ></button>  
@@ -121,7 +124,7 @@ export default function Home() {
                 <picture className={style.classification}>
                 <img src="/classificacaoIdade.svg" alt="Cover do Filme" />
               </picture>
-                <span className={style.duration}>{moviesSelected.durationInMinutes}</span>
+                <span className={style.duration}>{ (converter(moviesSelected.durationInMinutes))}</span>
             </div>
             <Button/>
             <p className={style.description}>
@@ -131,7 +134,7 @@ export default function Home() {
           
         </div>
 
-        <div className={style.main} style={{top: '0'}}>
+        <div className={style.main} style={{top: '-15'}}>
           <h1 className={style.title}>Outros Filmes legais</h1>
           {
             movies && movies.map((element: MoviesProps) => {

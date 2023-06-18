@@ -27,7 +27,9 @@
 
   .cardDescription {
     font-family: "Nunito Sans", sans-serif;
-    width: 500px;
+    width: auto;
+    max-width: 500px;
+    min-width: 280px;
     font-weight: 400;
     font-size: 17px;
     position: relative;
@@ -46,19 +48,18 @@
 
   }
 }
-
 .main {
   padding: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 23px;
-  justify-content: center;
-  top: -13rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 45px 1fr;
+  grid-column-gap: 24px;
+  padding: 3rem;
+  top: -3rem;
   position: relative;
 
   .title {
-    margin-left: 39px;
-    width: 100%;
+    grid-area: 1 / 1 / 2 / 5;
     font-weight: 700;
     font-size: 24px;
     line-height: 133.4%;
@@ -84,11 +85,13 @@
 
 }
 .movieSinopse{
-    height: 220px;
+    max-height: 380px;
+    min-height: 220px;
     display: grid;
     grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: 1fr 9rem;
     padding: 40px 60px 40px 60px;
+    grid-row-gap: 1.5rem;
     .duration{
       display: grid;
       grid-template-columns: 97px 4rem;
@@ -96,6 +99,8 @@
       justify-items: start;
       font-size: 24px;
       line-height: 175%;
+      font-weight: 600;
+
       .durationTitle{
         color:#999999;
         font-size: 16px;
@@ -135,4 +140,31 @@
 }
 .backButtonClass:hover {
   transform: scale(1.2);
+}
+
+@media only screen and (max-width: 610px) { 
+.main{
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 42px repeat(2, 1fr);
+  grid-row-gap: 24px;
+  
+
+  .title{
+    grid-area: 1 / 1 / 2 / 3;
+  }
+
+}
+.movieSinopse{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  padding: 2rem;
+  .duration{
+    grid-template-columns: 1fr;
+
+  }
+.description { grid-area: 3 / 1 / 4 / 2; }
+
+}
+
 }
