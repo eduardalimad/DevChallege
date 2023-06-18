@@ -147,13 +147,13 @@
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 42px repeat(2, 1fr);
   grid-row-gap: 24px;
-  
-
+  top: 0;
   .title{
     grid-area: 1 / 1 / 2 / 3;
   }
 
 }
+
 .movieSinopse{
   display: grid;
   grid-template-columns: 1fr;
@@ -163,8 +163,15 @@
     grid-template-columns: 1fr;
 
   }
-.description { grid-area: 3 / 1 / 4 / 2; }
+.description { 
+  grid-area: 3 / 1 / 4 / 2; 
+  font-size: 15px;
+}
+}
+.imgLogo{
+  margin: auto;
+  top: 30rem !important;
+  left: calc(50% - 98px)!important;
 
 }
-
 }

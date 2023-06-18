@@ -134,7 +134,7 @@ export default function Home() {
           
         </div>
 
-        <div className={style.main} style={{top: '-15'}}>
+        <div className={style.main}>
           <h1 className={style.title}>Outros Filmes legais</h1>
           {
             movies && movies.map((element: MoviesProps) => {
