@@ -51,9 +51,9 @@ export default function Home() {
     return (
       <div className='screenAllMovies'>
         <NavBar />
-        <div className={style.carrosel}>
+        <div className={style.containerbannerPrincipal}>
 
-          <div className={style.img}>
+          <div className={style.bannerPrincipal}>
             {
               movies && movies.map((element: MoviesProps, index) => {
                 if (index === 2) {
@@ -76,8 +76,8 @@ export default function Home() {
           </div>
         </div>
 
-        <div className={style.main} >
-          <h1 className={style.title}>Filmes legais</h1>
+        <div className={style.mainContentMovie} >
+          <h1 className={style.titleMainContent}>Filmes legais</h1>
           {
             movies && movies.map((element: MoviesProps) => {
               return (
@@ -94,7 +94,7 @@ export default function Home() {
   }
 
   function screenMoviesSelectedComponent() {
-    const converter = (minutos: number): string => {
+    const conversor = (minutos: number): string => {
       const horas: number = Math.floor(minutos / 60);
       const min: number = minutos % 60;
       const textoHoras: string = (`00${horas}`).slice(-2);
@@ -105,42 +105,44 @@ export default function Home() {
 
     return (
     <div className='screenSelectedMovies'>
-      <button className={style.backButtonClass} onClick={() => setScreenMovies(true)} ></button>  
+      <button className={style.buttonBack} onClick={() => setScreenMovies(true)} ></button>  
       {
       
-      moviesSelected && <div>
+      moviesSelected && <>
         {}
         <div className={style.moviesSelected}>
           <picture>
-            <img src={moviesSelected.banner} alt="Banner do Filme" className={style.imgBanner} />
+            <img src={moviesSelected.banner} alt="Banner do Filme" className={style.moviesSelected_Banner} />
           </picture>
 
-          <picture >
-            <img src={moviesSelected.logo} alt="Banner do Filme" className={style.imgLogo}/>
+          <picture  >
+            <img src={moviesSelected.logo} alt="Logo do Filme" className={style.moviesSelected_Logo}/>
           </picture>
-          <div className={style.movieSinopse}>
-            <div className={style.duration}>
-                <span className={style.durationTitle}>Duração</span>
-                <picture className={style.classification}>
-                <img src="/classificacaoIdade.svg" alt="Cover do Filme" />
+          <div className={style.moviesSelected_Sinopse}>
+            <div className={style.moviesSelected_movieDuration}>
+                <span className={style.moviesSelected_movieName }>Duração</span>
+                <picture className={style.moviesSelected_movieClassification }>
+                <img src="/classificacaoIdade.svg" alt="Classificação indicativa" />
               </picture>
-                <span className={style.duration}>{ (converter(moviesSelected.durationInMinutes))}</span>
+                <span className={style.duration}>{ (conversor(moviesSelected.durationInMinutes))}</span>
             </div>
-            <Button/>
-            <p className={style.description}>
-              {moviesSelected.description}</p>
-          
+            <Button  />
+            <p className={style.moviesSelected_movieDescription}>
+              {moviesSelected.description}
+            </p>
+
         </div>
           
         </div>
 
-        <div className={style.main}>
-          <h1 className={style.title}>Outros Filmes legais</h1>
+        <div className={style.mainContentMovie}>
+          <h1 className={style.titleMainContent}>Outros Filmes legais</h1>
           {
             movies && movies.map((element: MoviesProps) => {
               return (
                 <>
-                  <a onClick={() => getMovieById(element.id)} >
+                  <a onClick={() => getMovieById(element.id)} 
+                    className={style.container} >
                     <Card parentToChild={element.cover} />
                   </a>
                 </>
@@ -149,7 +151,7 @@ export default function Home() {
           }
         </div>
 
-      </div>
+      </>
       
       }
 

@@ -1,6 +1,6 @@
 
 .containerCard{
-    width: 94%;
+    width: 100%;
     height: 100%;
     cursor: pointer;
     transition: all 0.5s ease;
@@ -9,5 +9,12 @@
     transform: scale(1.1);
 }
 
+@media only screen and (max-width: 610px) { 
+.containerCard{
+    height: 214.55px;
+    width: 151px;
+}
 
 
+
+}
