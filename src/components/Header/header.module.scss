@@ -58,15 +58,20 @@
         display: none!important;
     }
     .menuMobile{
-        padding: 4rem;
-        gap: .5rem;
-        display: block !important;
-        background-color: rgba(26, 26, 26, 0.598);
-        position: absolute;
         height: 100vh;
-        left: 0;
         width: 14rem;
+        padding: 4rem 4rem 0rem 1rem;
+        position: absolute;
         top: 0;
+        display: block !important;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.73) 33%, rgba(0, 0, 0, 0) 100%);
+        
+    }
+    .link{
+        margin: .5rem;
+    }
+    .link:hover{
+        color: #8000ff;
     }
 
     

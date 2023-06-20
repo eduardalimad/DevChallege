@@ -4,9 +4,9 @@ export function SideBar() {
     return (
     <>
         <div className={style.menuMobile}>
-              <li key="filmes">Filmes</li>
-              <li key="series">Séries</li>
-              <li key="minha-lista">Minha Lista</li>
+              <li key="filmes" className={style.link}> Filmes</li>
+              <li key="series" className={style.link}> Séries</li>
+              <li key="minha-lista" className={style.link}> Minha Lista</li>
         </div>
         
     </>

@@ -1,6 +1,6 @@
-.button{
+.button {
     width: 129px;
-    height: 48px;    
+    height: 48px;
     background: linear-gradient(211.43deg, #8000FF 1.97%, #EB00FF 98.03%);
     border-radius: 8px;
     border: none;
@@ -14,12 +14,30 @@
     gap: 8px;
     opacity: 0.8;
     cursor: pointer;
-    .iconButton{
+
+    .iconButton {
         width: 18px;
         height: 22px;
-        
+
     }
 }
-.button:hover{
+
+
+.buttonScreenOne {
+    @extend .button
+}
+
+.buttonScreenTwo {
+    @extend .button;
+    @extend .fullWidth;
+}
+
+.button:hover {
     opacity: 1.6;
+}
+
+@media only screen and (max-width: 610px) {
+    .fullWidth {
+        width: 100%;
+    }
 }

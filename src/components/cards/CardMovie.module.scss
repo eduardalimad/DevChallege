@@ -1,20 +1,25 @@
 
 .containerCard{
+    flex: 1 1 auto;
     width: 100%;
-    height: 100%;
+    height: auto;
+    max-width: 293.36px;
+    max-height: 424px;
     cursor: pointer;
     transition: all 0.5s ease;
+
+    .cardImg {
+        width: 100%;
+        height: 100%;
+    }
 }
 .containerCard:hover{
     transform: scale(1.1);
 }
 
 @media only screen and (max-width: 610px) { 
-.containerCard{
-    height: 214.55px;
-    width: 151px;
-}
-
-
-
+    .containerCard{
+        max-height: 214.55px;
+        max-width: 151px;
+    }
 }

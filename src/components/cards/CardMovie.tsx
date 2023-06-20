@@ -1,14 +1,18 @@
 "use client";
-import style from "../cards/CardMovie.module.scss"
+import style from "../cards/CardMovie.module.scss";
+
 interface Props {
   parentToChild: string,
+  action: () => void,
 }
 
-const Card: React.FC<Props> = ({ parentToChild }) => {
+const Card: React.FC<Props> = ({ parentToChild, action }: Props) => {
   return (
-    <picture>
-      <img src={parentToChild} alt="Cover do Filme" className={style.containerCard} />
-    </picture>
+    <a onClick={action} className={style.containerCard} >
+      <picture>
+        <img src={parentToChild} alt="Cover do Filme" className={style.cardImg} />
+      </picture>
+    </a>
   );
 };
 

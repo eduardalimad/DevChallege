@@ -1,15 +1,16 @@
 "use client";
 import style from "./Btn.module.scss";
 
-export function Button( className) {
-  Button.defaultProps = {
-    className: '',
+interface Props {
+  type: 'screen one' | 'screen two';
+}
 
-  };
+export function Button({type}: Props) {
+
   return <>
-    <button className={style.button}>
+    <button className={type == 'screen one' ? style.buttonScreenOne : style.buttonScreenTwo }>
     <picture >
-      <img src={"/iconBtn.svg"} alt="Logo filme Turbo" className={`style.iconButton ${className}`} />
+      <img src={"/iconBtn.svg"} alt="Logo filme Turbo" className={style.iconButton } />
     </picture>
     Assistir
     </button>

@@ -65,7 +65,7 @@ export default function Home() {
                           <img src={element.logo} alt="Logo filme Turbo" />
                           <h4 className={style.cardDescription} >{element.description} </h4>
                         </picture>
-                        <Button />
+                        <Button type='screen one' />
                       </div>
                     </>
                   );
@@ -78,17 +78,17 @@ export default function Home() {
 
         <div className={style.mainContentMovie} >
           <h1 className={style.titleMainContent}>Filmes legais</h1>
-          {
-            movies && movies.map((element: MoviesProps) => {
-              return (
-                <>
-                  <a onClick={() => getMovieById(element.id)} >
-                    <Card parentToChild={element.cover} />
-                  </a>
-                </>
-              );
-            })
-          }
+          <div className={style.containerAllMovies}>
+            {
+              movies && movies.map((element: MoviesProps) => {
+                return (
+                  <>
+                    <Card parentToChild={element.cover} action={() => getMovieById(element.id)} />
+                  </>
+                );
+              })
+            }
+          </div>
         </div>
       </div>)
   }
@@ -99,64 +99,60 @@ export default function Home() {
       const min: number = minutos % 60;
       const textoHoras: string = (`00${horas}`).slice(-2);
       const textoMinutos: string = (`00${min}`).slice(-2);
-    
+
       return `${textoHoras}h${textoMinutos}m`;
     };
 
     return (
-    <div className='screenSelectedMovies'>
-      <button className={style.buttonBack} onClick={() => setScreenMovies(true)} ></button>  
-      {
-      
-      moviesSelected && <>
-        {}
-        <div className={style.moviesSelected}>
-          <picture>
-            <img src={moviesSelected.banner} alt="Banner do Filme" className={style.moviesSelected_Banner} />
-          </picture>
+      <div className='screenSelectedMovies'>
+        <button className={style.buttonBack} onClick={() => setScreenMovies(true)} ></button>
+        {
 
-          <picture  >
-            <img src={moviesSelected.logo} alt="Logo do Filme" className={style.moviesSelected_Logo}/>
-          </picture>
-          <div className={style.moviesSelected_Sinopse}>
-            <div className={style.moviesSelected_movieDuration}>
-                <span className={style.moviesSelected_movieName }>Duração</span>
-                <picture className={style.moviesSelected_movieClassification }>
-                <img src="/classificacaoIdade.svg" alt="Classificação indicativa" />
+          moviesSelected && <>
+            { }
+            <div className={style.moviesSelected}>
+              <picture>
+                <img src={moviesSelected.banner} alt="Banner do Filme" className={style.moviesSelected_Banner} />
               </picture>
-                <span className={style.duration}>{ (conversor(moviesSelected.durationInMinutes))}</span>
+
+              <picture  >
+                <img src={moviesSelected.logo} alt="Logo do Filme" className={style.moviesSelected_Logo} />
+              </picture>
+              <div className={style.moviesSelected_Sinopse}>
+                <div className={style.moviesSelected_movieDuration}>
+                  <span className={style.moviesSelected_movieName}>Duração</span>
+                  <picture className={style.moviesSelected_movieClassification}>
+                    <img src="/classificacaoIdade.svg" alt="Classificação indicativa" />
+                  </picture>
+                  <span className={style.duration}>{(conversor(moviesSelected.durationInMinutes))}</span>
+                </div>
+                <Button type='screen two' />
+                <p className={style.moviesSelected_movieDescription}>
+                  {moviesSelected.description}
+                </p>
+
+              </div>
+
             </div>
-            <Button  />
-            <p className={style.moviesSelected_movieDescription}>
-              {moviesSelected.description}
-            </p>
 
-        </div>
-          
-        </div>
+            <div className={style.mainContentMovie} style={{ top: '3rem' }}>
+              <h1 className={style.titleMainContent}>Outros Filmes legais</h1>
+              <div className={style.containerAllMovies}>
+                {
+                  movies && movies.map((element: MoviesProps) => {
+                    return (
+                      <>
+                        <Card parentToChild={element.cover} action={() => getMovieById(element.id)} />
+                      </>
+                    );
+                  })
+                }
+              </div>
+            </div>
 
-        <div className={style.mainContentMovie}>
-          <h1 className={style.titleMainContent}>Outros Filmes legais</h1>
-          {
-            movies && movies.map((element: MoviesProps) => {
-              return (
-                <>
-                  <a onClick={() => getMovieById(element.id)} 
-                    className={style.container} >
-                    <Card parentToChild={element.cover} />
-                  </a>
-                </>
-              );
-            })
-          }
-        </div>
-
-      </>
-      
-      }
-
-      
-    </div>)
+          </>
+        }
+      </div>)
   }
 
   return (
