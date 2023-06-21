@@ -17,9 +17,42 @@
     transform: scale(1.1);
 }
 
+.containerBarProgress{
+    width: 100%;
+    background-color: transparent;
+    position: sticky;
+    margin-top: -13px;
+    box-shadow: inset 0px -6.87568px 0px rgba(0, 0, 0, 0.7);
+
+    .barProgress{
+        width: 70%;
+        height: 7.88px;
+        background: linear-gradient(211.43deg, #8000FF 1.97%, #EB00FF 98.03%);
+    }
+    .barProgressTwo{
+        width: 0;
+    }
+}
+
+.barProgressOn {
+    @extend .barProgress
+}
+
+.barProgressOff {
+    @extend .barProgress;
+    @extend .barProgressTwo;
+    
+}
+
+
 @media only screen and (max-width: 610px) { 
     .containerCard{
         max-height: 214.55px;
         max-width: 151px;
     }
+
+    .container,.barProgress{
+        display: none;
+    }
 }
+

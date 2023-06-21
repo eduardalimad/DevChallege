@@ -5,6 +5,7 @@ import style from '../app/index.module.scss'
 import { NavBar } from '@/components/Header/Header'
 import Card from '@/components/cards/CardMovie'
 import { Button } from '@/components/Button/Button'
+import Footer from '@/components/Footer/footer'
 
 
 interface MoviesProps {
@@ -65,7 +66,7 @@ export default function Home() {
                           <img src={element.logo} alt="Logo filme Turbo" />
                           <h4 className={style.cardDescription} >{element.description} </h4>
                         </picture>
-                        <Button type='screen one' />
+                        <Button type='screen one'  />
                       </div>
                     </>
                   );
@@ -83,13 +84,14 @@ export default function Home() {
               movies && movies.map((element: MoviesProps) => {
                 return (
                   <>
-                    <Card parentToChild={element.cover} action={() => getMovieById(element.id)} />
+                    <Card type='active' parentToChild={element.cover} action={() => getMovieById(element.id)} />
                   </>
                 );
               })
             }
           </div>
         </div>
+        <Footer />
       </div>)
   }
 
@@ -142,7 +144,7 @@ export default function Home() {
                   movies && movies.map((element: MoviesProps) => {
                     return (
                       <>
-                        <Card parentToChild={element.cover} action={() => getMovieById(element.id)} />
+                        <Card type='disabled' parentToChild={element.cover} action={() => getMovieById(element.id)} />
                       </>
                     );
                   })
