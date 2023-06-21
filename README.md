@@ -1,22 +1,31 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## 🚀 Inicializando o Projeto
 
-First, run the development server:
+Para rodar o DevChallege, siga estas etapas:
 
+Clonando o Projeto
+```
+git clone https://github.com/eduardalimad/DevChallege.git
+```
+Baixar dependências
+``` 
+npm install 
+``` 
+ou caso use YARN 
+``` 
+yarn 
+```
+Rodar o projeto 
 ```bash
 npm run dev
 # or
 yarn dev
 # or
-pnpm dev
+npm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Abra [http://localhost:3000](http://localhost:3000) com seu navegador para ver o resultado
 
 ## Learn More
 
