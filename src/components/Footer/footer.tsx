@@ -6,7 +6,7 @@ import style from "./footer.module.scss";
 //   action: () => void,
 // }
 
-const Card  = () => {
+const Footer  = () => {
   return (
     <footer className={style.containerFooter}>
         <div className={style.container}>
@@ -19,4 +19,4 @@ const Card  = () => {
   );
 };
 
-export default Card;
+export default Footer;
