@@ -1,17 +1,16 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import style from './header.module.scss';
-import { SideBar } from './SideBar'
+import { SideBar } from './SideBar';
 
-interface Props{
-  showElement: string,
-  setShowElement: (value: boolean) => void,
+interface Props {
+  showElement: boolean;
+  setShowElement: (value: boolean) => void;
 }
 
-function showOrHideElement({showElement, setShowElement}:Props ){
+function showOrHideElement({ showElement, setShowElement }: Props) {
   setShowElement(!showElement);
 }
-
 
 export function NavBar() {
   const [showElement, setShowElement] = useState(false);
@@ -19,21 +18,23 @@ export function NavBar() {
   return (
     <>
       <header className={style.header}>
-      <button className={style.btnMobile} onClick={() => showOrHideElement({ showElement, setShowElement })}> 
-      <Image
+        <button
+          className={style.btnMobile}
+          onClick={() => showOrHideElement({ showElement, setShowElement })}
+        >
+          <Image
             src="/menu.png"
             width={32}
             height={32}
             alt="Picture of the author"
           />
-    
-       </button>
-      {showElement && (
+        </button>
+        {showElement && (
           <div>
-            <SideBar/>
+            <SideBar />
           </div>
         )}
-        
+
         <div className={style.logoStream}>
           <Image
             src="/logo.svg"
