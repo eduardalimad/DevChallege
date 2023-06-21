@@ -15,7 +15,5 @@ export function Button({type}: Props) {
     Assistir
     </button>
   </>;
-{}
-  
 }
 

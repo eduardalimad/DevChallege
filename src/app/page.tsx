@@ -91,7 +91,7 @@ export default function Home() {
             }
           </div>
         </div>
-        <Footer />
+    
       </div>)
   }
 
@@ -108,10 +108,7 @@ export default function Home() {
     return (
       <div className='screenSelectedMovies'>
         <button className={style.buttonBack} onClick={() => setScreenMovies(true)} ></button>
-        {
-
-          moviesSelected && <>
-            { }
+        { moviesSelected && <>
             <div className={style.moviesSelected}>
               <picture>
                 <img src={moviesSelected.banner} alt="Banner do Filme" className={style.moviesSelected_Banner} />
@@ -137,7 +134,7 @@ export default function Home() {
 
             </div>
 
-            <div className={style.mainContentMovie} style={{ top: '3rem' }}>
+            <div className={style.mainContentMovie}>
               <h1 className={style.titleMainContent}>Outros Filmes legais</h1>
               <div className={style.containerAllMovies}>
                 {
@@ -158,9 +155,10 @@ export default function Home() {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <div className="flex min-h-screen flex-col items-center justify-between p-24">
       {screenMovies && screenMoviesComponent()}
       {!screenMovies && screenMoviesSelectedComponent()}
-    </main>
+      <Footer />
+    </div>
   )
 }
