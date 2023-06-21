@@ -3,7 +3,7 @@ import { app } from '@/api/app';
 import { useEffect, useState } from 'react'
 import style from '../app/index.module.scss'
 import { NavBar } from '@/components/Header/Header'
-import Card from '@/components/cards/CardMovie'
+import Card from '@/components/Cards/CardMovie'
 import { Button } from '@/components/Button/Button'
 import Footer from '@/components/Footer/footer'
 

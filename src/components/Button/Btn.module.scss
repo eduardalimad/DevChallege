@@ -21,23 +21,23 @@
 
     }
 }
-
-
-.buttonScreenOne {
-    @extend .button
-}
-
-.buttonScreenTwo {
-    @extend .button;
-    @extend .fullWidth;
-}
-
-.button:hover {
-    opacity: 1.6;
-}
-
-@media only screen and (max-width: 610px) {
-    .fullWidth {
-        width: 100%;
+    .button:hover {
+        opacity: 1.6;
     }
-}
+
+    .buttonScreenOne {
+        @extend .button
+    }
+
+    .buttonScreenTwo {
+        @extend .button;
+        @extend .fullWidth;
+    }
+
+
+
+    @media only screen and (max-width: 610px) {
+        .fullWidth {
+            width: 100%;
+        }
+    }
