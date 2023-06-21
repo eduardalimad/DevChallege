@@ -3,19 +3,23 @@ import { useState } from 'react';
 import style from './header.module.scss';
 import { SideBar } from './SideBar'
 
-function showOrHideElement(showElement, setShowElement) {
+interface Props{
+  showElement: string,
+  setShowElement: (value: boolean) => void,
+}
+
+function showOrHideElement({showElement, setShowElement}:Props ){
   setShowElement(!showElement);
 }
 
 
 export function NavBar() {
   const [showElement, setShowElement] = useState(false);
-  
 
   return (
     <>
       <header className={style.header}>
-      <button className={style.btnMobile} onClick={() => showOrHideElement(showElement, setShowElement)}> 
+      <button className={style.btnMobile} onClick={() => showOrHideElement({ showElement, setShowElement })}> 
       <Image
             src="/menu.png"
             width={32}
