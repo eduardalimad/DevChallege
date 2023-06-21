@@ -10,7 +10,7 @@ export function Button({type}: Props) {
   return <>
     <button className={type == 'screen one' ? style.buttonScreenOne : style.buttonScreenTwo }>
     <picture >
-      <img src={"/iconBtn.svg"} alt="Logo filme Turbo" className={style.iconButton } />
+      <img src={"/iconBtn.svg"} className={style.iconButton } />
     </picture>
     Assistir
     </button>

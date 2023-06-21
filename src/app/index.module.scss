@@ -132,10 +132,10 @@
   z-index: 100;
   cursor: pointer;
   transition: all 0.3s ease;
-}
 
-.buttonBack:hover {
-  transform: scale(1.2);
+  &:hover {
+    transform: scale(1.2);
+  }
 }
 
 

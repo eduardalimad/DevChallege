@@ -69,14 +69,11 @@
     }
     .link{
         margin: .5rem;
-    }
-    .link:hover{
-        color: #8000ff;
+        &:hover{
+            color: #8000ff;
+        }
     }
 
-    
-    
-      
   }
 
  
