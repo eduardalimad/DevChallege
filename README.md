@@ -27,11 +27,6 @@ npm dev
 
 Abra [http://localhost:3000](http://localhost:3000) com seu navegador para ver o resultado
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 
