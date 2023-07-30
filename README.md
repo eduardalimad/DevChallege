@@ -1,4 +1,8 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Criação de uma landing page utilizando React e Next.js📌
+
+Protótipo do figma 
+![image](https://github.com/eduardalimad/DevChallege/assets/99693673/c3ad52fb-5356-4069-a3c8-8f245de7ea3e)
+
 
 ## 🚀 Inicializando o Projeto
 
